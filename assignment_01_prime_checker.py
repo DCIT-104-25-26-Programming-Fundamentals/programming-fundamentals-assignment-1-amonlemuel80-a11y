@@ -34,4 +34,20 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+number = int(input("Enter a number: "))
+
+if number <= 1:
+    print(f"{number} is NOT a prime number.")
+else:
+    is_prime = True
+
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print(f"{number} is a prime number.")
+    else:
+        print(f"{number} is NOT a prime number.")
 
