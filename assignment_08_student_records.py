@@ -89,4 +89,23 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+def delete_task(tasks):
+    """Delete a task from the list."""
+    if len(tasks) == 0:
+        print("Your to-do list is empty.")
+        return
+
+    view_tasks(tasks)
+
+    try:
+        task_num = int(input("Enter task number to delete: "))
+
+        if 1 <= task_num <= len(tasks):
+            removed_task = tasks.pop(task_num - 1)
+            print(f'Task "{removed_task}" has been removed.')
+        else:
+            print("Error: Invalid task number.")
+
+    except ValueError:
+        print("Error: Please enter a valid number.")
 
